@@ -1,0 +1,49 @@
+@model MovieManager.Models.MovieViewModels.CreateMovieViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>MovieViewModel</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Title" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ReleaseYear" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="number" asp-for="ReleaseYear" maxlength="4" class="form-control" />
+                <span asp-validation-for="ReleaseYear" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CurrentMovieRating" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @Html.DropDownListFor(m => m.SelectedMovieRating, Model.MovieRatingOptions, "- Please select a movie rating -", new { @class = "form-control" })
+                <span asp-validation-for="CurrentMovieRating" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

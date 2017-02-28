@@ -1,0 +1,58 @@
+@model ManageUserViewModel
+@using MovieManager.Dto
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+
+@{
+    ViewData["Title"] = "ManageUsers";
+}
+
+<h2>ManageUsers</h2>
+
+<p>
+    <a asp-controller="Account" asp-action="Register">Create New</a>
+</p>
+<table class="table">
+
+    @if (Model.Users.Count() == 0)
+    {
+        <thead>
+            <tr><td colspan="3" class="text-center">No User Accounts</td></tr>
+        </thead>
+    }
+    else
+    {
+        <thead>
+            <tr>
+                <th>
+                    User Id
+                </th>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th>
+                    Roles
+                </th>
+            </tr>
+        </thead>
+        foreach (ManageUser user in Model.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.Roles</td>
+                @if (await AuthorizationService.AuthorizeAsync(User, "RequireAdministratorRole")
+                                || await AuthorizationService.AuthorizeAsync(User, "RequireManagerRole"))
+                {
+                    <td>
+                        <a asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+    }
+</table>

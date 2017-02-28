@@ -1,0 +1,29 @@
+{
+  "web": {
+    "client_id": "483715196594-o90dm9522dsc7llt21ui98ps7v3b7tdq.apps.googleusercontent.com",
+    "project_id": "precise-asset-160104",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "hULcBLasTOeXeU6wAAF4Cf8Q",
+    "redirect_uris": [ "https://localhost:44300/signin-google" ]
+  }
+}
+
+//https://localhost:44300/signin-google
+//https://localhost:44300/signin-facebook
+
+//dotnet user-secrets set MySecret ValueOfMySecret
+
+//dotnet user-secrets set MySecret aspnet-AxiaHomework-c6bae077-e3a0-4612-911f-be555c21609d
+
+
+//dotnet user-secrets set Authentication:Facebook:AppId 1879922702219826
+//dotnet user-secrets set Authentication:Facebook:AppSecret 4c55e5d5f5981e0cb6b50022fbb7018d
+
+
+//dotnet user-secrets set Authentication:Google:ClientID 483715196594-o90dm9522dsc7llt21ui98ps7v3b7tdq.apps.googleusercontent.com
+//dotnet user-secrets set Authentication:Google:ClientSecret hULcBLasTOeXeU6wAAF4Cf8Q
+
+// Secret Manager
+// https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets#security-app-secrets

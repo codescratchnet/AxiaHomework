@@ -1,0 +1,41 @@
+@model MovieManager.Models.ApplicationUser
+@using MovieManager.Dto
+
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ApplicationUser</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteUser">
+        <div class="form-actions no-color">
+            <input type="submit" value="DeleteUser" class="btn btn-default" /> |
+            <a asp-action="ManageUsers">Back to List</a>
+        </div>
+    </form>
+</div>

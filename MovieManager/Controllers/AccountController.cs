@@ -54,6 +54,8 @@ namespace MovieManager.Controllers
         [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
         {
+            //Test Add Comment#1
+
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }

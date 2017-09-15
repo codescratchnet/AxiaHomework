@@ -10,6 +10,7 @@ namespace MovieManager.Controllers
     {
         public IActionResult Index()
         {
+            //Add Comment #1
             return View();
         }
 

@@ -11,9 +11,7 @@ namespace MovieManager.Controllers
         public IActionResult Index()
         {
             //Add Comment #1
-            //Add Comment #2
-            //Add Comment #3   
-            //Add Comment #4        
+            //Add Comment #2           
             return View();
         }
 

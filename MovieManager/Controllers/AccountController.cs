@@ -56,6 +56,7 @@ namespace MovieManager.Controllers
         {
             ViewData["ReturnUrl"] = returnUrl;
             return View();
+            //Test Feature branch 1
         }
 
         // POST: /Account/Login
